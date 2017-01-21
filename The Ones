@@ -1,0 +1,68 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+int counter(const string &);
+bool IsBinary(string );
+int main() 
+{
+ string code;
+ int num;
+while(code!="Exit"&&code!="exit")
+{
+ cout<<"Please enter a binary number and I will let you know the number of"<<endl;
+ cout<<"1s there are (Type Exit To Exit): "<<endl;
+ cout<<"Binary code: ";
+ cin>>code;
+ cout<<endl;   
+ cout<<"Your Binary Code is: "<<code<<endl; 
+             bool bIsBinary = IsBinary( code );
+                 if(bIsBinary )
+                    {
+                    num=counter(code);
+                    cout<<endl;
+                        }
+                        else
+                            {
+                            cout<<"Error!!! Your Number is Not Binary"<<endl;
+                            cout<<endl;
+                                }
+}                  
+      cout<<endl;
+      cout<<endl;      
+ system("pause"); 
+    
+}
+int counter(const string &s)
+{
+    int count=0;
+    int i=0;
+    
+    while(i<s.length())
+    {
+       
+       if(s.at(i)=='1')
+           count++;
+           i++;
+          
+    }
+    cout<<"The Number of Ones is: "<<count<<endl;
+    cout<<endl;
+}
+
+bool IsBinary( string s )
+{
+   int i=0;
+   bool bIsBinary = true;
+   
+   while (i<s.length())
+   {
+      if( s.at(i) != '1' && s.at(i) != '0' )
+          {
+          bIsBinary = false;
+          }
+          i++;
+   }
+
+   return bIsBinary;
+}
